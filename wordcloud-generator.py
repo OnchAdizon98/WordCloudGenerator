@@ -19,7 +19,7 @@ def generate_wordcloud(text):
         max_font_size = 250,
         min_font_size = 10,
         max_words=100,
-        font_path='Benne-Regular.ttf',
+        font_path='Benne-Regular.otf',
         prefer_horizontal=1,
         mask=mask
         ).generate(text)

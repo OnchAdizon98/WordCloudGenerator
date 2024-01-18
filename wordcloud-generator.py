@@ -39,9 +39,9 @@ with open('stopwords.json', 'r') as json_file:
    # print(stopwords_list)
 
 def main():
-    st.title("Word Cloud Generator")
+    st.title("MMI Word Cloud Generator")
 
-    uploaded_file = st.file_uploader("Upload an Excel file", type="xlsx")
+    uploaded_file = st.file_uploader("Upload your Excel file", type="xlsx")
 
     if uploaded_file is not None:
         st.write("### File Uploaded Successfully!")

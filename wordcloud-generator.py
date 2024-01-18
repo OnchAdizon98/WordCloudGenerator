@@ -4,9 +4,25 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import json
 import string
+import numpy as np
+from PIL import Image
 
 def generate_wordcloud(text):
-    wordcloud = WordCloud(width=800, height=400, random_state=21, max_font_size=110, background_color='white').generate(text)
+
+    mask = np.array(Image.open(r'patterns\\circle2.png'))
+
+    wordcloud = WordCloud(
+        width = mask.shape[1],
+        height = mask.shape[0],
+        background_color ='white',
+        stopwords = stopwords_list,
+        max_font_size = 250,
+        min_font_size = 10,
+        max_words=100,
+        # font_path='fonts\\Benne-Regular.otf',
+        prefer_horizontal=1,
+        mask=mask
+        ).generate(text)
     plt.figure(figsize=(10, 7))
     plt.imshow(wordcloud, interpolation="bilinear")
     plt.axis('off')

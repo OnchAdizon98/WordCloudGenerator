@@ -9,7 +9,7 @@ from PIL import Image
 
 def generate_wordcloud(text):
 
-    mask = np.array(Image.open(r'patterns\\circle2.png'))
+    mask = np.array(Image.open(r'circle2.png'))
 
     wordcloud = WordCloud(
         width = mask.shape[1],
